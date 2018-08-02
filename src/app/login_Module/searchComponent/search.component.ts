@@ -16,14 +16,17 @@ interface Iuser {
 
 export class SearchComponent {
     user:Iuser; 
+    showResult:boolean = false;
 
     constructor(private _LoginService: LoginService){}
 
 
     onSearch(query: string){
+        this.showResult = false;
         this._LoginService.getCharacterList(query)
                           .subscribe(res=>{
                               console.log(res)
+                              this.showResult = true;
                               this.user = res.results;
                           })
     }
