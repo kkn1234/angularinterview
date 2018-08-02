@@ -3,14 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginModule } from './login_Module/login.module';
 
 const routes: Routes = [
-    {path: '', redirectTo: 'login'}
+    {path: '', redirectTo: '/login',  pathMatch: 'full'},
     {path: 'login', loadChildren: './login_Module/login.module#LoginModule'}
 ]
 
 @NgModule({
     imports:[
         LoginModule,
-        RouterModule.forRoot(routes)
+        RouterModule.forRoot(routes, {enableTracing: true})
     ],
     declarations:[
         
@@ -21,4 +21,4 @@ const routes: Routes = [
     ]
 })
 
-export class LoginRoutingModule {}
+export class AppRoutingModule {}

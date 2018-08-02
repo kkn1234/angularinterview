@@ -23,7 +23,8 @@ export class SearchComponent {
     onSearch(query: string){
         this._LoginService.getCharacterList(query)
                           .subscribe(res=>{
-                              this.user = res;
+                              console.log(res)
+                              this.user = res.results;
                           })
     }
     

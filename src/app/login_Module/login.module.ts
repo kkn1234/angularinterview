@@ -5,14 +5,16 @@ import { LoginService } from './services/login.service';
 import { LoginComponent } from './component/login.component';
 import { SearchComponent } from './searchComponent/search.component';
 import { AuthService } from '../auth.gaurds';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 
 @NgModule({
     imports:[
+        FormsModule,
         CommonModule,
         LoginRoutingModule
+        
     ],
     declarations:[
-        LoginComponent,
         SearchComponent
     ],
     providers: [
